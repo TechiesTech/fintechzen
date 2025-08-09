@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import heroImage from "../public/hero-image.png"; // Replace with your actual image
+// import Image from "next/image";
+// import heroImage from "../public/hero-image.png"; // Replace with your actual image
 
 export default function Hero() {
   // Scroll function

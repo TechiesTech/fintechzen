@@ -113,7 +113,7 @@ const HowWeWork: React.FC = () => {
                 The bank requests supporting documents from the borrower, 
                 such as identification proof, income statements, bank 
                 statements, and collateral details (if applicable). The bank 
-                verifies the information provided to assess the borrower's 
+                verifies the information provided to assess the borrower&apos;s 
                 creditworthiness and eligibility for the loan.
               </p>
             </div>
@@ -172,8 +172,8 @@ const HowWeWork: React.FC = () => {
               </div>
               <p className="text-gray-600 leading-relaxed">
                 The bank conducts a credit assessment to evaluate the 
-                borrower's creditworthiness and ability to repay the loan. This 
-                process involves analyzing the borrower's credit history, 
+                borrower&apos;s creditworthiness and ability to repay the loan. This 
+                process involves analyzing the borrower&apos;s credit history, 
                 income stability, debt-to-income ratio, and other factors.
               </p>
             </div>
@@ -233,7 +233,7 @@ const HowWeWork: React.FC = () => {
                 <h3 className="text-2xl font-bold text-teal-900">Loan Approval</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                If the borrower meets the bank's lending criteria and passes 
+                If the borrower meets the bank&apos;s lending criteria and passes 
                 the credit assessment, the loan is approved. The bank 
                 determines the loan amount, interest rate, repayment term, 
                 and any associated fees.
