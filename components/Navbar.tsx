@@ -79,12 +79,17 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Login Button */}
-        <div className="relative z-10">
-          <button className="px-6 py-2 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-medium rounded-full shadow-lg hover:shadow-xl hover:from-teal-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-50">
-            Login
-          </button>
-        </div>
+        {/* Contact button */}
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="relative z-10 px-6 py-3 rounded-full transition-all duration-300 mr-14 group bg-gradient-to-r from-teal-600 to-emerald-600 text-white font-medium hover:from-teal-500 hover:to-emerald-500 transform hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-teal-500/25"
+        >
+          <span className="relative z-10 flex items-center gap-2">
+            Contact us
+            <div className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300"></div>
+          </span>
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-300 -z-10 scale-110"></div>
+        </button>
       </nav>
     </div>
   );
