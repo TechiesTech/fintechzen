@@ -3,25 +3,6 @@
 import { useState } from 'react';
 
 export default function AboutUs() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
-
   return (
     <section id="about" className="bg-white py-20 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -34,7 +15,7 @@ export default function AboutUs() {
 
           <p className="text-lg text-gray-700 leading-relaxed">
             At <strong className="text-teal-700">HardCash</strong>, we are committed to simplifying your financial journey.
-            Whether you're a salaried professional or a growing business, our flexible loan services are tailored to meet your needs.
+            Whether you&apos;re a salaried professional or a growing business, our flexible loan services are tailored to meet your needs.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">

@@ -11,8 +11,6 @@ interface NavLink {
 }
 
 export default function Navbar() {
-  const [currentPath] = useState("");
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
