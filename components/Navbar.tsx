@@ -1,93 +1,93 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-
-interface NavLink {
-  name: string;
-  href: string;
-  isScroll: boolean;
-  sectionId?: string;
-}
 
 export default function Navbar() {
+  const [currentPath, setCurrentPath] = useState("");
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const yOffset = -100; // adjust based on navbar height
+      const yOffset = -100;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
-  const navLinks: NavLink[] = [
-    { name: "Home", href: "/", isScroll: false },
-    { name: "Services", href: "#services", isScroll: true, sectionId: "services" },
-    { name: "How we work", href: "#how-we-work", isScroll: true, sectionId: "how-we-work" },
-    { name: "About Us", href: "#about", isScroll: true, sectionId: "about" },
+  const navLinks = [
+    { name: "Personal Loans", href: "#services", isScroll: true, sectionId: "services" },
+    { name: "Business Loans", href: "#business", isScroll: true, sectionId: "services" },
+    { name: "How It Works", href: "#how-we-work", isScroll: true, sectionId: "how-we-work" },
+    { name: "About", href: "#about", isScroll: true, sectionId: "about" },
   ];
 
-  const handleNavClick = (link: NavLink) => {
-    if (link.isScroll && link.sectionId) {
+  const handleNavClick = (link: any) => {
+    if (link.isScroll) {
       scrollToSection(link.sectionId);
     }
   };
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <nav className="max-w-full mx-auto flex items-center justify-between py-4 px-12 backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-2xl bg-gradient-to-r from-white/20 via-white/10 to-white/20 hover:shadow-3xl transition-all duration-500 ease-out">
-        {/* Animated background glow */}
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 via-emerald-400/20 to-cyan-400/20 rounded-2xl blur-xl opacity-60"></div>
+      <nav className="fixed top-0 left-0 w-full z-50 max-w-full mx-auto flex items-center justify-between py-5 px-6 lg:px-12 backdrop-blur-xl bg-gradient-to-r from-white/95 via-white/90 to-white/95 border-b border-gradient-to-r from-purple-200/30 via-blue-200/30 to-indigo-200/30 shadow-xl shadow-purple-500/10">
         
-        {/* Logo */}
-        <Link href="/" className="relative z-10 text-2xl font-bold ml-12 group cursor-pointer">
-          <span className="text-teal-900 transition-all duration-300 group-hover:text-teal-700 drop-shadow-sm group-hover:drop-shadow-lg transform group-hover:scale-105">
-            Hard
-          </span>
-          <span className="text-emerald-600 transition-all duration-300 group-hover:text-emerald-500 drop-shadow-sm group-hover:drop-shadow-lg transform group-hover:scale-105 inline-block">
-            Cash
-          </span>
-          <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-emerald-500 group-hover:w-full transition-all duration-500 ease-out"></div>
-        </Link>
+        {/* Logo with Premium Gradient */}
+        <a href="/" className="flex items-center space-x-3 group cursor-pointer">
+          <div className="w-10 h-10 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-purple-500/25 transition-all duration-300 group-hover:scale-105">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+            </svg>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-2xl font-bold bg-gradient-to-r from-purple-700 via-blue-700 to-indigo-700 bg-clip-text text-transparent group-hover:from-purple-600 group-hover:via-blue-600 group-hover:to-indigo-600 transition-all duration-300">
+              CredVerse
+            </span>
+            <span className="text-xs font-medium text-slate-500 -mt-1">Financial Solutions</span>
+          </div>
+        </a>
 
-        {/* Links */}
-        <div className="relative z-10 flex items-center gap-12">
+        {/* Navigation Links */}
+        <div className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             link.isScroll ? (
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link)}
-                className="relative font-medium transition-all duration-300 cursor-pointer group text-slate-700 hover:text-teal-800 transform hover:scale-105 hover:drop-shadow-lg"
+                className="relative font-semibold text-slate-700 hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:bg-clip-text transition-all duration-300 cursor-pointer group py-2"
               >
-                <span className="relative z-10">{link.name}</span>
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-emerald-500 group-hover:w-full transition-all duration-500 ease-out"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-emerald-400/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                <span className="relative">{link.name}</span>
+                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 group-hover:w-full transition-all duration-500 ease-out rounded-full"></div>
               </button>
             ) : (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
-                className="relative font-medium transition-all duration-300 cursor-pointer group text-slate-700 hover:text-teal-800 transform hover:scale-105 hover:drop-shadow-lg"
+                className="relative font-semibold text-slate-700 hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:bg-clip-text transition-all duration-300 group py-2"
               >
-                <span className="relative z-10">{link.name}</span>
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-emerald-500 group-hover:w-full transition-all duration-500 ease-out"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-emerald-400/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-              </Link>
+                <span className="relative">{link.name}</span>
+                <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-500 ease-out rounded-full ${currentPath === link.href ? "w-full" : "w-0 group-hover:w-full"}`}></div>
+              </a>
             )
           ))}
         </div>
 
-        {/* Contact button */}
-        <button
-          onClick={() => scrollToSection("contact")}
-          className="relative z-10 px-6 py-3 rounded-full transition-all duration-300 mr-14 group bg-gradient-to-r from-teal-600 to-emerald-600 text-white font-medium hover:from-teal-500 hover:to-emerald-500 transform hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-teal-500/25"
-        >
-          <span className="relative z-10 flex items-center gap-2">
-            Contact us
-            <div className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300"></div>
-          </span>
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-300 -z-10 scale-110"></div>
-        </button>
+        {/* CTA Buttons */}
+        <div className="flex items-center space-x-4">
+          <button className="hidden md:block px-6 py-2.5 text-slate-700 font-semibold hover:text-purple-700 transition-all duration-300">
+            Login
+          </button>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="px-6 py-3 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:via-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/25 group"
+          >
+            <span className="flex items-center space-x-2">
+              <span>Get Started</span>
+              <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </button>
+        </div>
       </nav>
     </div>
   );
