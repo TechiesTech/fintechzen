@@ -15,10 +15,9 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { name: "Personal Loans", href: "#services", isScroll: true, sectionId: "services" },
-    { name: "Business Loans", href: "#business", isScroll: true, sectionId: "services" },
+    { name: "Our Services", href: "#services", isScroll: true, sectionId: "services" },
     { name: "How It Works", href: "#how-we-work", isScroll: true, sectionId: "how-we-work" },
-    { name: "About", href: "#about", isScroll: true, sectionId: "about" },
+    { name: "About Us", href: "#about", isScroll: true, sectionId: "about" },
   ];
 
   const handleNavClick = (link: any) => {
@@ -74,19 +73,22 @@ export default function Navbar() {
         {/* CTA Buttons */}
         <div className="flex items-center space-x-4">
           <button className="hidden md:block px-6 py-2.5 text-slate-700 font-semibold hover:text-purple-700 transition-all duration-300">
-            Login
+            
           </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="px-6 py-3 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:via-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/25 group"
-          >
-            <span className="flex items-center space-x-2">
-              <span>Get Started</span>
-              <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </span>
-          </button>
+         <button
+  onClick={() => scrollToSection("contact")}
+  className="px-4 py-3 bg-gradient-to-r from-green-600 via-green-700 to-green-900 text-white font-semibold rounded-xl hover:from-green-500 hover:via-green-700 hover:to-green-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/25 group"
+>
+  <span className="flex items-center space-x-2">
+    {/* Phone icon first */}
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.5 4.5a1 1 0 01-.217 1.03l-2.2 2.2a16.06 16.06 0 006.292 6.292l2.2-2.2a1 1 0 011.03-.217l4.5 1.5a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z" />
+    </svg>
+
+    {/* Text beside icon */}
+    <span>Call Now</span>
+  </span>
+</button>
         </div>
       </nav>
     </div>

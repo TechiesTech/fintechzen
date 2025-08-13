@@ -79,11 +79,11 @@ export default function Hero() {
         <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
       </div>
 
-      <section className="relative z-10 max-w-6xl mx-auto px-6 pt-40 pb-20">
+      <section className="relative z-10 max-w-full mx-auto px-6 pt-44 pl-18 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 ">
             
             {/* Rotating Slogans */}
             <div className="h-64 flex items-center">
@@ -120,7 +120,7 @@ export default function Hero() {
             </div>
 
             {/* Key Benefits - Clean Grid */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-6 ">
               <div className="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -227,7 +227,7 @@ export default function Hero() {
           
 
           {/* Right Visual - Improved Mobile Design */}
-          <div className="flex justify-center">
+          <div className="flex justify-center ">
             <div className="relative">
               {/* Enhanced Phone Mockup */}
               <div className="w-80 h-[600px] bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 rounded-[50px] p-1 shadow-2xl">
@@ -334,27 +334,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Enhanced Floating Elements */}
-              {/* <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex flex-col items-center justify-center shadow-2xl animate-pulse">
-                <div className="text-white text-xs font-bold text-center">
-                  <div className="text-lg">⚡</div>
-                  <div>INSTANT</div>
-                  <div>APPROVAL</div>
-                </div>
-              </div> */}
-              
-              {/* <div className="absolute bottom-140-left-8 w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex flex-col items-center justify-center shadow-2xl animate-bounce">
-                <div className="text-white text-sm font-bold text-center">
-                  <div className="text-xl">💰</div>
-                  <div className="text-xs">ZERO</div>
-                  <div className="text-xs">FEES</div>
-                </div>
-              </div> */}
-
-      
-              {/* <div className="absolute top-1/3 -left-12 w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center shadow-lg animate-bounce delay-1000">
-                <span className="text-white text-lg font-bold">₹</span>
-              </div> */}
             </div>
           </div>
         </div>
