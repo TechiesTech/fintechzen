@@ -72,18 +72,18 @@ export default function Hero() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 relative overflow-hidden pb-32">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 relative overflow-hidden ">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden opacity-60">
         <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
       </div>
 
-      <section className="relative z-10 max-w-full mx-auto px-6 pt-44 pl-18 pb-20">
+      <section className="relative z-10 max-w-full mx-auto px-6 pt-40 pl-18 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Content */}
-          <div className="space-y-8 ">
+          <div className="space-y-8">
             
             {/* Rotating Slogans */}
             <div className="h-64 flex items-center">
@@ -109,10 +109,10 @@ export default function Hero() {
                 <button
                   key={index}
                   onClick={() => handleSloganClick(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`h-3 rounded-full transition-all duration-300 ${
                     index === currentSlogan 
                       ? 'bg-blue-600 w-8' 
-                      : 'bg-gray-300 hover:bg-gray-400'
+                      : 'bg-gray-300 hover:bg-gray-400 w-3'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -120,7 +120,7 @@ export default function Hero() {
             </div>
 
             {/* Key Benefits - Clean Grid */}
-            <div className="grid grid-cols-3 gap-6 ">
+            <div className="grid grid-cols-3 gap-6">
               <div className="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,7 +168,14 @@ export default function Hero() {
                 step="50000"
                 value={loanAmount}
                 onChange={handleLoanAmountChange}
-                className="w-full h-3 bg-gray-200 rounded-full appearance-none cursor-pointer mb-4 slider"
+                className="w-full h-3 bg-gray-200 rounded-full appearance-none cursor-pointer mb-4 
+                         [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 
+                         [&::-webkit-slider-thumb]:bg-gradient-to-r [&::-webkit-slider-thumb]:from-blue-600 [&::-webkit-slider-thumb]:to-indigo-600 
+                         [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer 
+                         [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:shadow-blue-500/40
+                         [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:bg-gradient-to-r 
+                         [&::-moz-range-thumb]:from-blue-600 [&::-moz-range-thumb]:to-indigo-600 [&::-moz-range-thumb]:rounded-full 
+                         [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:shadow-lg"
                 style={{
                   background: `linear-gradient(to right, #2563eb 0%, #3730a3 ${((loanAmount - 50000) / (2500000 - 50000)) * 100}%, #e5e7eb ${((loanAmount - 50000) / (2500000 - 50000)) * 100}%, #e5e7eb 100%)`
                 }}
@@ -224,19 +231,16 @@ export default function Hero() {
             </div>
           </div>
 
-          
-
-          {/* Right Visual - Improved Mobile Design */}
-          <div className="flex justify-center ">
+          {/* Right Visual - Improved Mobile Design with Better Alignment */}
+          <div className="flex justify-start lg:justify-center -mt-100 -ml-30 lg:mt-0 mb-40 lg:ml-0">
             <div className="relative">
               {/* Enhanced Phone Mockup */}
               <div className="w-80 h-[600px] bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 rounded-[50px] p-1 shadow-2xl">
                 <div className="w-full h-full bg-black rounded-[45px] p-3">
                   <div className="w-full h-full bg-white rounded-[35px] overflow-hidden relative">
                     
-                    
                     {/* Status Bar */}
-                    <div className="bg-gray-900 h-12 flex items-center justify-between px-6 text-white text-sm">
+                    <div className="bg-gray-900 h-12 flex items-center justify-between px-6 text-white text-sm font-medium">
                       <div className="flex items-center space-x-1">
                         <div className="w-1 h-1 bg-white rounded-full"></div>
                         <div className="w-1 h-1 bg-white rounded-full"></div>
@@ -247,23 +251,20 @@ export default function Hero() {
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M17.778 8.222c-4.296-4.296-11.26-4.296-15.556 0A1 1 0 01.808 6.808c5.076-5.077 13.308-5.077 18.384 0a1 1 0 01-1.414 1.414zM14.95 11.05a7 7 0 00-9.9 0 1 1 0 01-1.414-1.414 9 9 0 0112.728 0 1 1 0 01-1.414 1.414zM12.12 13.88a3 3 0 00-4.242 0 1 1 0 01-1.415-1.414 5 5 0 017.072 0 1 1 0 01-1.415 1.414zM9 16a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
                         </svg>
-                        <div className="w-6 h-3 border border-white rounded-sm">
-                          <div className="w-4 h-2 bg-green-400 rounded-sm m-0.5"></div>
+                        <div className="w-6 h-3 border border-white rounded-sm relative">
+                          <div className="w-4 h-2 bg-green-400 rounded-sm absolute top-0.5 left-0.5"></div>
                         </div>
                       </div>
                     </div>
 
-
-                    
-
                     {/* App Header */}
-                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-8">
+                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-6">
                       <div className="flex items-center justify-between">
-                        <div>
-                          <h3 className="text-white text-2xl font-bold">QuickLoan</h3>
-                          <p className="text-blue-100 text-sm">Get Instant Personal Loans</p>
+                        <div className="flex-1">
+                          <h3 className="text-white text-2xl font-bold leading-tight">QuickLoan</h3>
+                          <p className="text-blue-100 text-sm mt-1">Get Instant Personal Loans</p>
                         </div>
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
                           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2" />
                           </svg>
@@ -271,32 +272,32 @@ export default function Hero() {
                       </div>
                     </div>
                     
-                    <div className="p-6 space-y-6 bg-gray-50">
+                    <div className="p-6 space-y-4 bg-gray-50 flex-1">
                       {/* Loan Status Card */}
-                      <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                      <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
                         <div className="flex items-center justify-between mb-4">
                           <span className="text-lg font-bold text-gray-800">Loan Status</span>
-                          <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold">APPROVED</span>
+                          <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">APPROVED</span>
                         </div>
                         
                         <div className="space-y-3">
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">Amount Approved</span>
-                            <span className="font-bold text-2xl text-green-600">₹5,00,000</span>
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-600 text-sm">Amount Approved</span>
+                            <span className="font-bold text-xl text-green-600">₹5,00,000</span>
                           </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">Interest Rate</span>
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-600 text-sm">Interest Rate</span>
                             <span className="font-semibold text-gray-800">11.5% p.a.</span>
                           </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">Monthly EMI</span>
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-600 text-sm">Monthly EMI</span>
                             <span className="font-semibold text-gray-800">₹12,059</span>
                           </div>
                         </div>
 
                         <div className="mt-4">
-                          <div className="flex justify-between text-sm mb-2">
-                            <span>Approval Progress</span>
+                          <div className="flex justify-between items-center text-sm mb-2">
+                            <span className="text-gray-600">Approval Progress</span>
                             <span className="font-semibold text-green-600">100%</span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
@@ -306,14 +307,14 @@ export default function Hero() {
                       </div>
 
                       {/* Quick Actions */}
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-2 gap-3">
                         <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
                           <div className="w-10 h-10 bg-blue-500 rounded-full mx-auto mb-2 flex items-center justify-center">
                             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                             </svg>
                           </div>
-                          <div className="text-sm font-semibold text-gray-700">EMI Calculator</div>
+                          <div className="text-xs font-semibold text-gray-700">EMI Calculator</div>
                         </div>
                         <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
                           <div className="w-10 h-10 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
@@ -321,45 +322,22 @@ export default function Hero() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                             </svg>
                           </div>
-                          <div className="text-sm font-semibold text-gray-700">Documents</div>
+                          <div className="text-xs font-semibold text-gray-700">Documents</div>
                         </div>
                       </div>
 
                       {/* Apply Button */}
-                      <button className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                      <button className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-base rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                         Apply for New Loan
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        .slider::-webkit-slider-thumb {
-          appearance: none;
-          width: 24px;
-          height: 24px;
-          background: linear-gradient(45deg, #2563eb, #3730a3);
-          border-radius: 50%;
-          cursor: pointer;
-          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-        }
-        
-        .slider::-moz-range-thumb {
-          width: 24px;
-          height: 24px;
-          background: linear-gradient(45deg, #2563eb, #3730a3);
-          border-radius: 50%;
-          cursor: pointer;
-          border: none;
-          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-        }
-      `}</style>
     </div>
   );
 }
